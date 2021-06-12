@@ -9,5 +9,6 @@ Press 'q' to quit program.
 Press 'n' to show next picture
 
 Requirements:
--OpenCV\n
+-OpenCV
+
 -Numpy
