@@ -17,6 +17,7 @@ import numpy as np
 import os
 
 directory = r'C:/Users/max-v/Desktop/Arbeit/Realsens/Images/Side'+'/'   ### image directory
+label_path= r'C:/Users/max-v/Desktop/Arbeit/Realsens/Images/keypoints'+'/'
  
 # Picture path
 for file in os.listdir(directory):
@@ -42,7 +43,7 @@ for file in os.listdir(directory):
                 cv2.imshow(file, img)
                 print(x,y)
          
-        label_path=directory.replace('Side', "keypoints")+file+".txt"
+        #label_path=directory.replace('Side', "keypoints")+file+".txt"
 
         cv2.namedWindow(file)
         cv2.setMouseCallback(file, on_EVENT_LBUTTONDOWN)
