@@ -16,7 +16,7 @@ import cv2
 import numpy as np
 import os
 
-directory = r'Images/Side'+'/'   ### image directory
+directory = r'C:/Users/max-v/Desktop/Arbeit/Realsens/Images/Side'+'/'   ### image directory
  
 # Picture path
 for file in os.listdir(directory):
@@ -49,19 +49,33 @@ for file in os.listdir(directory):
         # with open(label_path, "w") as file:   
                 # file.write(a[0]/w, b[0]/h) 
         cv2.imshow(file, img)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        #cv2.waitKey(0)
+        k = cv2.waitKey(0) & 0xFF
+        # press 'q' to exit
+        if k == ord('n'):
+            cv2.destroyAllWindows()
+        elif k == ord('q'):
+            break
+        else:
+            cv2.destroyAllWindows()
+            print("wrong key")
         # if cv2.waitKey(33) == ord('a'):
         #     print("pressed a")
         # if cv2.waitKey(0)&0xFF==2555904:
         # #cv2.imshow("image", img)
         #     print("blabla")
         #     cv2.destroyAllWindows()
-        with open(label_path, "w") as file:   
-                file.write("%f %f" %(a[0]/w, b[0]/h) )
-        print(a[0], b[0])
+        if(len(a)>0):
+            with open(label_path, "w") as file:   
+                    file.write("%f %f" %(a[0]/w, b[0]/h) )
+            print(a[0], b[0])
+
         
 
         # if cv2.waitKey(0)&0xFF==27:
         #     break
+    
+        else:
+            print("no keypoint")
+
 cv2.destroyAllWindows()
