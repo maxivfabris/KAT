@@ -16,7 +16,7 @@ import cv2
 import numpy as np
 import os
 
-directory = r'C:/Users/max-v/Desktop/Arbeit/Realsens/Images/Side'+'/'   ### image directory
+directory = r'Images/Side'+'/'   ### image directory
  
 # Picture path
 for file in os.listdir(directory):
